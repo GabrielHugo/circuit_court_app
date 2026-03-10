@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>stocks</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Grower</th>
+            <th>product brand</th>
+            <th>product name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>promo</th>
+            <th>date added</th>
+            <th>expiration date</th>
+        </tr>
+        {% for x in products %}
+        <tr>
+            <td>{{x.grower}}</td>
+            <td>{{x.product_brand}}</td>
+            <td>{{x.product_name}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.price}}</td>
+            <td>{{x.quantity}}</td>
+            <td>{{x.promo}}</td>
+            <td>{{x.date_added}}</td>
+            <td>{{x.expiration_date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
