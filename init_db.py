@@ -37,3 +37,8 @@ else :
                        "customer_order": "Jean Dupont", "product_buy": "Milk"})
 
     print("Collection 'orders' created")
+
+products = db["products"]
+products.insert_one({"product_brand": "COCO", "product_name": "Cacao",
+                         "description": "97% cacao, 2% sugar, 1% water", "price": 4.98, "quantity": 72, "promo": None,
+                         "date_added": "10/03/2026", "expiration_date": "16/03/2026"})

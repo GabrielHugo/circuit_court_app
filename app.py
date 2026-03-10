@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -11,11 +11,19 @@ load_dotenv()
 CONNECTION_URI = os.getenv("URI")
 client = MongoClient(CONNECTION_URI, server_api=ServerApi('1'))
 
+db = client["circuit_court_db"]
+products = db["products"]
 app = Flask(__name__)
 
 @app.route("/")
-def acceuil() :
-    return "test"
+def home() :
+    return render_template("home.html")
+
+@app.route("/products", methods=["GET"])
+def products() :
+    products_list = db["products"].find()
+    return render_template("products.html", products=products_list)
+
 
 if __name__ == "__main__" :
     app.run(debug=True)
