@@ -23,7 +23,7 @@ if "products" in db.list_collection_names() :
 
 else :
     products = db["products"]
-    products.insert_one({"product_brand": "MilkMilk", "product_name": "Lait entier",
+    products.insert_one({"grower": "Shop_1", "product_brand": "MilkMilk", "product_name": "Lait entier",
                          "description": "97% milk, 2% sugar, 1% water", "price": 2.99, "quantity": 48, "promo": None,
                          "date_added": "09/03/2026", "expiration_date": "15/03/2026"})
 
@@ -39,6 +39,6 @@ else :
     print("Collection 'orders' created")
 
 products = db["products"]
-products.insert_one({"product_brand": "COCO", "product_name": "Cacao",
+products.insert_one({"grower": "Shop_2", "product_brand": "COCO", "product_name": "Cacao",
                          "description": "97% cacao, 2% sugar, 1% water", "price": 4.98, "quantity": 72, "promo": None,
                          "date_added": "10/03/2026", "expiration_date": "16/03/2026"})

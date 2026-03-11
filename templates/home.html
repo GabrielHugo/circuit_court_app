@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,30 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f7f6; color: #333; }
 
-        header { background-color: #2c3e50; color: white; padding: 2rem; text-align: center; }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
         header h1 { margin-bottom: 0.5rem; }
+
+        .btn-panier {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .btn-panier:hover { background-color: #e67e22; transform: scale(1.05); }
 
         main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
         main h2 { margin-bottom: 1.5rem; border-bottom: 2px solid #27ae60; display: inline-block; padding-bottom: 5px;}
@@ -35,7 +57,7 @@
         .description { font-size: 0.95rem; margin-bottom: 1.5rem; color: #555; }
         .prix { font-size: 1.5rem; font-weight: bold; color: #27ae60; margin-bottom: 1.5rem; }
 
-        button {
+        .btn-ajouter {
             background-color: #27ae60;
             color: white;
             border: none;
@@ -46,12 +68,13 @@
             font-size: 1rem;
             font-weight: bold;
         }
-        button:hover { background-color: #219150; }
+        .btn-ajouter:hover { background-color: #219150; }
     </style>
 </head>
 <body>
 
     <header>
+        <button class="btn-panier">🛒 Panier (0)</button>
         <h1>Livraison Locale - leVillage</h1>
         <p>Vos produits frais de la région, livrés chez vous ce samedi matin.</p>
     </header>
@@ -66,7 +89,7 @@
                 <p class="marque">Producteur : MilkMilk</p>
                 <p class="description">97% milk, 2% sugar, 1% water</p>
                 <p class="prix">2.99 €</p>
-                <button>Ajouter au panier</button>
+                <button class="btn-ajouter">Ajouter au panier</button>
             </div>
 
             <div class="carte-produit">
@@ -74,7 +97,7 @@
                 <p class="marque">Maraîcher de ville</p>
                 <p class="description">Assortiment de saison : carottes, poireaux, choux et pommes de terre.</p>
                 <p class="prix">15.00 €</p>
-                <button>Ajouter au panier</button>
+                <button class="btn-ajouter">Ajouter au panier</button>
             </div>
 
             <div class="carte-produit">
@@ -82,7 +105,7 @@
                 <p class="marque">Ferme de la ville</p>
                 <p class="description">Fromage frais au lait cru, affiné 2 semaines.</p>
                 <p class="prix">5.50 €</p>
-                <button>Ajouter au panier</button>
+                <button class="btn-ajouter">Ajouter au panier</button>
             </div>
 
         </div>

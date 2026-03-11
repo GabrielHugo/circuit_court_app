@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Products</title>
+    <style>
+
+        .flex {
+            display: flex;
+        }
+
+        img {
+            background-color: #f39c12;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
     <h1>Products</h1>
+
+    <div class="flex">
+    {% for x in products %}
+    <div class="card">
+        <img src="" alt="">
+        <h1>{{x.product_name}}</h1>
+        <p class="price">{{x.price}} $</p>
+        <p><button>Add to card</button></p>
+    </div>
+    {% endfor %}
+    </div>
+
 </body>
 </html>
